@@ -57,6 +57,7 @@ if(isset($_GET['taxon_search'])) $_SESSION["last_search"] = $_GET['taxon_search'
   <style>
 	  body {
 	    font: 16px Arial;
+		margin: 0;
 	  }
 	  .taxon_status_ACCEPTED{
 		  font-weight: bold;
@@ -101,6 +102,28 @@ if(isset($_GET['taxon_search'])) $_SESSION["last_search"] = $_GET['taxon_search'
 		  color: gray;
 		  margin-top: 0.3em;
 	  }
+	  #warning_banner{
+		  width: 100%;
+		  font-weight: bold;
+		  color: white;
+		  background-color: #B73239;
+		  padding-top: 0.5em;
+		  padding-bottom: 0.5em;
+		  padding-left: 1em;
+		  
+	  }
+	  h1{
+		  width: 100%;
+		  font-weight: bold;
+		  color: white;
+		  background-color: black;
+		  padding: 0.5em;
+		  margin-top: 0;
+	  }
+	  #content{
+		  padding: 1em;
+	  }
+	  
 <?php
 if(isset($_GET['highlight'])){
 	echo '#' . $_GET['highlight'];
@@ -129,8 +152,12 @@ if(isset($_GET['highlight'])){
   
 </head>
 <body>
-	
+	<div id="warning_banner">
+		Warning: This is a development site and may change or go away without warning.
+	</div>
 	<h1>World Flora Online - Normative Taxonomy <?php echo WFO_DEFAULT_YEAR ?></h1>
+	
+	<div id="content">
 	
 	<form autocomplete="off" action="/index.php">
 	  <div class="autocomplete" style="width:80%;">
@@ -248,6 +275,7 @@ if($t){
 	
 ?>
 
+</div><!-- end content -->
   
 </body>
 </html>
