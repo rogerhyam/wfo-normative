@@ -136,7 +136,7 @@ class Taxon{
 		if($this->kids) return $this->kids;
 		
 		// fetch the rows for the db
-		$result = $mysqli->query("SELECT * FROM col_2019.wfo_2019_classification where parentNameUsageID = '{$this->taxon_id}' order by scientificName");
+		$result = $mysqli->query("SELECT * FROM wfo_2019_classification where parentNameUsageID = '{$this->taxon_id}' order by scientificName");
 		while($kid_row = $result->fetch_assoc()){
 			$this->kids[] = Taxon::factory($kid_row);
 		}
@@ -152,7 +152,7 @@ class Taxon{
 		if($this->synonyms) return $this->synonyms;
 		
 		// fetch the rows for the db
-		$result = $mysqli->query("SELECT * FROM col_2019.wfo_2019_classification where acceptedNameUsageID = '{$this->taxon_id}' order by scientificName");
+		$result = $mysqli->query("SELECT * FROM wfo_2019_classification where acceptedNameUsageID = '{$this->taxon_id}' order by scientificName");
 		while($syn_row = $result->fetch_assoc()){
 			$this->synonyms[] = Taxon::factory($syn_row);
 		}

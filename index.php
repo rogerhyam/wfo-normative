@@ -260,7 +260,7 @@ if($t){
 	
 	// nothing past so don't do search or render taxon - home page
 	
-	$result = $mysqli->query("SELECT * FROM col_2019.wfo_2019_classification where taxonRank = 'phylum'");
+	$result = $mysqli->query("SELECT * FROM wfo_2019_classification where taxonRank = 'phylum'");
 	echo "<ul>";
 	while($row = $result->fetch_assoc()){
 		echo "<li>";

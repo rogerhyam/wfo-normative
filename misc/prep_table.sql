@@ -1,4 +1,4 @@
-ALTER TABLE `col_2019`.`wfo_2019_classification` 
+ALTER TABLE `wfo_2019_classification` 
 CHANGE COLUMN `taxonID` `taxonID` VARCHAR(15) NOT NULL ,
 CHANGE COLUMN `scientificNameID` `scientificNameID` VARCHAR(25) NULL DEFAULT NULL ,
 CHANGE COLUMN `localID` `localID` VARCHAR(40) NULL DEFAULT NULL ,
@@ -53,7 +53,7 @@ taxonomicStatus,
 taxonRank);
 
 # Do this after populating the column
-ALTER TABLE `col_2019`.`wfo_2019_classification` 
+ALTER TABLE `wfo_2019_classification` 
 ADD FULLTEXT INDEX `full-text` (`search_text`);
 
 
