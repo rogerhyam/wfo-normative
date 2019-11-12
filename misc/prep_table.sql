@@ -23,11 +23,40 @@ CHANGE COLUMN `originalNameUsageID` `originalNameUsageID` VARCHAR(15) NULL DEFAU
 CHANGE COLUMN `nameAccordingToID` `nameAccordingToID` VARCHAR(100) NULL DEFAULT NULL ,
 CHANGE COLUMN `majorGroup` `majorGroup` VARCHAR(1) NULL DEFAULT NULL ,
 CHANGE COLUMN `tplId` `tplId` VARCHAR(15) NULL DEFAULT NULL ,
+ADD COLUMN `search_text` TEXT NULL AFTER `tplId`;,
 ADD INDEX `rank` USING BTREE (`taxonRank` ASC),
 ADD INDEX `name` USING BTREE (`scientificName` ASC),
 ADD INDEX `taxon_id` USING BTREE (`taxonID` ASC),
 ADD INDEX `parent_Id` USING BTREE (`parentNameUsageID` ASC),
 ADD INDEX `synonyms` USING BTREE (`acceptedNameUsageID` ASC),
 ADD PRIMARY KEY (`taxonID`);
+
+
+# May take a while
+update wfo_2019_classification set search_text =
+concat_ws(' ',
+taxonID,
+scientificName,
+scientificNameAuthorship,
+family,
+subfamily,
+tribe,
+subtribe,
+genus,
+subgenus,
+specificEpithet,
+infraspecificEpithet,
+verbatimTaxonRank,
+nomenclaturalStatus,
+namePublishedIn,
+taxonomicStatus,
+taxonRank);
+
+# Do this after populating the column
+ALTER TABLE `col_2019`.`wfo_2019_classification` 
+ADD FULLTEXT INDEX `full-text` (`search_text`);
+
+
+
 
 

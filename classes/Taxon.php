@@ -7,6 +7,7 @@ class Taxon{
 	protected $taxon_id;
 	protected $kids = false;
 	protected $parent = false;
+	protected $accepted_taxon = false; // holds the accepted taxon if this is a synonym
 	protected $synonyms = false;
 
 	function __construct($row){
@@ -46,6 +47,10 @@ class Taxon{
 		}
 		
 		
+	}
+	
+	function get_taxon_id(){
+		return $this->taxon_id;
 	}
 	
 	function get_rank(){
@@ -100,8 +105,6 @@ class Taxon{
 	
 	function get_parent(){
 		
-		global $mysqli;
-		
 		// only create it once
 		if($this->parent) return $this->parent;
 		
@@ -109,6 +112,20 @@ class Taxon{
 		
 		return $this->parent;
 	
+	}
+	
+
+	function get_accepted_taxon(){
+		
+		// only create it once
+		if($this->accepted_taxon) return $this->accepted_taxon;
+		
+		if($this->row['acceptedNameUsageID']){
+			$this->accepted_taxon = Taxon::factory($this->row['acceptedNameUsageID']);
+		}
+		
+		return $this->accepted_taxon;
+		
 	}
 	
 	function get_children(){
@@ -178,6 +195,26 @@ class Taxon{
 	
 	function get_wfo_link(){
 		return '<a target="wfo" href="http://www.worldfloraonline.org/taxon/' . $this->row['taxonID'] . '">' . $this->row['taxonID'] . '</a>';
+	}
+
+	function get_search_result_html(){
+		
+		$out = '<a href="index.php?taxon_id=' . $this->taxon_id . '">';
+		$out .= '<div class="search_result">';
+		
+		$out .= '<div class="search_result_taxon_name">';
+		$out .= $this->taxon_id . ' ' .$this->get_name_html() . ' ' . $this->get_name_authorship_html();
+		$out .=  '</div>';
+		
+		$out .= '<div class="search_result_full_text">';
+		$out .= $this->row['search_text'];
+		$out .=  '</div>';
+		
+		$out .=  '</div>';
+		$out .= '</a>';
+		
+		return $out;
+		
 	}
 
 }

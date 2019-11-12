@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // db credentials are kept here.
 require_once('../wfo_secret.php');
 
