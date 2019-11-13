@@ -57,6 +57,11 @@ class Taxon{
 		return $this->rank;
 	}
 
+	function get_rank_html(){
+		return '<span class="taxon_rank">' . ucwords(strtolower($this->rank)) . '</span>';
+	}
+
+
 	function get_name_css_classes(){
 		
 		$css = array();
@@ -193,8 +198,12 @@ class Taxon{
 		return $this->row['taxonomicStatus'];
 	}
 	
-	function get_wfo_link(){
-		return '<a target="wfo" href="http://www.worldfloraonline.org/taxon/' . $this->row['taxonID'] . '">' . $this->row['taxonID'] . '</a>';
+	function get_wfo_link($short = false){
+		
+		if($short) $txt = 'wfo';
+		else $txt = $this->row['taxonID'];
+		
+		return '<a target="wfo" href="http://www.worldfloraonline.org/taxon/' . $this->row['taxonID'] . '">' . $txt . '</a>';
 	}
 
 	function get_search_result_html(){

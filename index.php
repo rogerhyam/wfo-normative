@@ -123,6 +123,29 @@ if(isset($_GET['taxon_search'])) $_SESSION["last_search"] = $_GET['taxon_search'
 	  #content{
 		  padding: 1em;
 	  }
+	  #title_banner{
+		  width: 100%;
+		  position:relative	;
+	  }
+	  #data_download{
+		  display: block;
+		  float: right;
+		  text-decoration: none;
+		  color: gray;
+	  }
+	  h2 .taxon_rank{
+		  color: gray;
+		  content-after: ;
+	  }
+	  h2 .taxon_rank::after{
+		  content: ":";
+	  }
+	  h2 a{
+		  font-size: 50%;
+		  vertical-align: super;
+		  text-decoration: none;
+		  width: 3em;
+	  }
 	  
 <?php
 if(isset($_GET['highlight'])){
@@ -177,7 +200,11 @@ if(isset($_GET['highlight'])){
 if($t){
 	
 	// we have an id so use it.
-	echo "<h2>{$t->get_name_html()}</h2>";
+	echo '<div id="title_banner">';
+	echo '<a id="data_download" href="data_download.php?taxon_id='. $t->get_taxon_id() .'">Download CSV: &#x1F4BE;</a>';
+	echo "<h2>{$t->get_rank_html()} {$t->get_name_html()} {$t->get_wfo_link(true)}</h2>";
+	echo '</div>';
+	
 	echo '<hr/>';
 	echo $t->get_path();
 	echo '<hr/>';
