@@ -17,7 +17,7 @@ $result = $mysqli->query($sql);
 
 $output = fopen("php://output",'w') or die("Can't open php://output");
 header("Content-Type:application/csv"); 
-header("Content-Disposition:attachment;filename=pressurecsv.csv"); 
+header("Content-Disposition:attachment;filename=" . $taxon_id . '-' . WFO_DEFAULT_YEAR . '.csv'); 
 
 // write out the header row
 $cols = $result->fetch_fields();
