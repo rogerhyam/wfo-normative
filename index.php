@@ -17,10 +17,11 @@ if(isset($_GET['taxon_id'])){
 	// it is a synonym
 	if($t->get_accepted_taxon()){
 		$accepted_taxon = $t->get_accepted_taxon();
-		
-		$url = "index.php?taxon_id=" . $accepted_taxon->get_taxon_id() . "&highlight=$highlight";
+		$parent = $accepted_taxon->get_parent();
+		$url = "index.php?taxon_id=" . $parent->get_taxon_id() . "&highlight=$highlight";
 		header("Location: $url");
 		exit;
+
 	}
 	
 	//it is a has no children
@@ -31,6 +32,8 @@ if(isset($_GET['taxon_id'])){
 		header("Location: $url");
 		exit;
 	}
+	
+	
 	
 }else{
 	$t = false;

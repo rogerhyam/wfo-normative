@@ -16,7 +16,7 @@ SELECT * FROM  wfo_2019_classification WHERE acceptedNameUsageID in (SELECT taxo
 $result = $mysqli->query($sql);
 
 $output = fopen("php://output",'w') or die("Can't open php://output");
-header("Content-Type:application/csv"); 
+header("Content-Type:application/csv");
 header("Content-Disposition:attachment;filename=" . $taxon_id . '-' . WFO_DEFAULT_YEAR . '.csv'); 
 
 // write out the header row
@@ -27,7 +27,7 @@ foreach ($cols as $col) {
 }
 fputcsv($output, $header);
 
-while($row = $result->fetch_array()){
+while($row = $result->fetch_array(MYSQLI_NUM)){
 	fputcsv($output, $row);
 }
 
