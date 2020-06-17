@@ -9,9 +9,9 @@ if(!$taxon_id || !preg_match('/^wfo-[0-9]{10}$/', $taxon_id)){
 	exit;
 }
 
-$sql = "SELECT * FROM wfo_2019_classification where parentNameUsageID = '$taxon_id'
+$sql = "SELECT * FROM wfo_2019 where parentNameUsageID = '$taxon_id'
 union
-SELECT * FROM  wfo_2019_classification WHERE acceptedNameUsageID in (SELECT taxonID FROM wfo_2019_classification where parentNameUsageID = '$taxon_id' )";
+SELECT * FROM  wfo_2019 WHERE acceptedNameUsageID in (SELECT taxonID FROM wfo_2019 where parentNameUsageID = '$taxon_id' )";
 
 $result = $mysqli->query($sql);
 

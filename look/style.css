@@ -1,0 +1,134 @@
+#taxonomy_browser{
+	font-size: 85%;
+}
+
+#taxonomy_browser .taxon_status_ACCEPTED{
+  font-weight: 550;  
+}
+
+#taxonomy_browser .taxon_status_SYNONYM{
+  color: black;
+}
+
+#taxonomy_browser table.taxa_list{
+	width: 100%;
+}
+
+#taxonomy_browser  a{
+	color: #585858;
+    border-bottom: 0.5px #666666 solid;
+}
+
+#taxonomy_browser .taxon_italic{
+  font-style: italic;
+}
+
+#taxonomy_browser  .synonym_list_item_name::before{
+	  content: "- ";
+}
+
+#taxonomy_browser th{
+  text-align: left;
+}
+
+#taxonomy_browser .wfo_link{
+	white-space: nowrap;
+}
+
+#taxonomy_browser .status_cell{
+	text-align: center;
+}
+
+
+#taxonomy_browser #data_download{
+  display: block;
+  float: right;
+  text-decoration: none;
+  color: gray;
+}
+
+#taxonomy_browser h2{
+	font-size: 150%;
+}
+#taxonomy_browser h2 .taxon_rank{
+  color: gray;
+  content-after: ;
+}
+#taxonomy_browser h2 .taxon_rank::after{
+  content: ":";
+}
+#taxonomy_browser h2 a{
+  font-size: 50%;
+  vertical-align: super;
+  text-decoration: none;
+  width: 3em;
+}
+
+#taxonomy_browser form{
+	overflow: auto;
+}
+
+#taxonomy_browser #taxon_search{
+	width: 80%;
+	margin: 0;
+	float:left;
+}
+
+#taxonomy_browser #search_button{
+	float: left;
+    border-radius: 0.25rem;
+    border: 1px solid silver;
+    padding: 0.5rem;
+}
+#taxonomy_browser #search_instructions{
+  font-size: 80%;
+  color: gray;
+  margin-top: 0.1em;
+  margin-bottom: 0.3em;
+}
+#taxonomy_browser hr{
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+
+
+
+/*
+
+.synonym_list_item_name{
+	  padding-left: 3em;
+}
+th{
+  text-align: left;
+}
+.wfo_link{
+	white-space: nowrap;
+}
+
+.search_result{
+  width: 100%;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+.search_result_full_text{
+  color: gray;
+  font-size: 80%;
+}
+
+#taxon_search{
+  font-size: 110%;
+}
+#search_button{
+  font-size: 130%;
+}
+
+#search_instructions{
+  font-size: 80%;
+  color: gray;
+  margin-top: 0.3em;
+}
+
+
+*/

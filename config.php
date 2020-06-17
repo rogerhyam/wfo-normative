@@ -7,7 +7,7 @@ require_once('../wfo_secret.php');
 
 define('WFO_DEFAULT_YEAR', 2019);
 
-define('WFO_TABLE_NAME', 'wfo_' . WFO_DEFAULT_YEAR . '_classification');
+define('WFO_TABLE_NAME', 'wfo_' . WFO_DEFAULT_YEAR);
 
 // create and initialise the database connection
 $mysqli = new mysqli($db_host, $db_user, $db_password, $db_database);

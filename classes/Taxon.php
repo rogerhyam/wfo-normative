@@ -141,7 +141,7 @@ class Taxon{
 		if($this->kids) return $this->kids;
 		
 		// fetch the rows for the db
-		$result = $mysqli->query("SELECT * FROM wfo_2019_classification where parentNameUsageID = '{$this->taxon_id}' order by scientificName");
+		$result = $mysqli->query("SELECT * FROM wfo_2019 where parentNameUsageID = '{$this->taxon_id}' order by scientificName");
 		while($kid_row = $result->fetch_assoc()){
 			$this->kids[] = Taxon::factory($kid_row);
 		}
@@ -157,7 +157,7 @@ class Taxon{
 		if($this->synonyms) return $this->synonyms;
 		
 		// fetch the rows for the db
-		$result = $mysqli->query("SELECT * FROM wfo_2019_classification where acceptedNameUsageID = '{$this->taxon_id}' order by scientificName");
+		$result = $mysqli->query("SELECT * FROM wfo_2019 where acceptedNameUsageID = '{$this->taxon_id}' order by scientificName");
 		while($syn_row = $result->fetch_assoc()){
 			$this->synonyms[] = Taxon::factory($syn_row);
 		}
@@ -195,7 +195,21 @@ class Taxon{
 	}
 	
 	function get_status_html(){
-		return $this->row['taxonomicStatus'];
+		switch ($this->row['taxonomicStatus']) {
+			case 'Accepted':
+				$status = 'A';
+				break;
+			case 'Unchecked':
+				$status = 'U';
+				break;
+			case 'Synonym':
+				$status = 'S';
+				break;
+			default:
+				$status = $this->row['taxonomicStatus'];
+				break;
+		}
+		return $status;
 	}
 	
 	function get_wfo_link($short = false){

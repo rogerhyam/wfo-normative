@@ -1,4 +1,4 @@
-ALTER TABLE `wfo_2019_classification` 
+ALTER TABLE `wfo_2019` 
 CHANGE COLUMN `taxonID` `taxonID` VARCHAR(15) NOT NULL ,
 CHANGE COLUMN `scientificNameID` `scientificNameID` VARCHAR(25) NULL DEFAULT NULL ,
 CHANGE COLUMN `localID` `localID` VARCHAR(40) NULL DEFAULT NULL ,
@@ -33,7 +33,7 @@ ADD PRIMARY KEY (`taxonID`);
 
 
 # May take a while
-update wfo_2019_classification set search_text =
+update wfo_2019 set search_text =
 concat_ws(' ',
 taxonID,
 scientificName,
@@ -53,7 +53,7 @@ taxonomicStatus,
 taxonRank);
 
 # Do this after populating the column
-ALTER TABLE `wfo_2019_classification` 
+ALTER TABLE `wfo_2019` 
 ADD FULLTEXT INDEX `full-text` (`search_text`);
 
 
