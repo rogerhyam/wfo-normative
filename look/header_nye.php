@@ -1,16 +1,41 @@
-<!-- Nye's header -->
+<!DOCTYPE html>
+<html lang="en-GB">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<!-- <title>Introduction | World Flora Online</title> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="origin-when-cross-origin"/>
+		<link rel="stylesheet" href="http://wfo.nyehughes.webfactional.com/css/style.css">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="http://wfo.nyehughes.webfactional.com/site.webmanifest">
+		<link rel="mask-icon" href="http://wfo.nyehughes.webfactional.com/safari-pinned-tab.svg" color="#4a8689">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		
+		<?php
+
+		require_once("look/header_bits.php");
+
+		?>
+	</head>
+	<body
+		class="wfo-about home">
 		<!-- define svg icons -->
+		<header class="main">
 				<nav class="inter-site-nav">
 					<ul class="nav-items">
-						<li class="wfo"><a  href="http://wfo.nyehughes.webfactional.com/">Explore the data</a></li>
-						<li class="about"><a  href="http://wfo.nyehughes.webfactional.com/">Find out about</a></li>
-						<li class="plant-list"><a  href="/">Look back in time</a></li>
+						<li class="wfo-portal "><a  href="http://www.worldfloraonline.org/">Explore the data</a></li>
+						<li class="wfo-about active" ><a  href="http://wfo.nyehughes.webfactional.com">Find out about</a></li>
+						<li class="wfo-plant-list "><a  href="/">Check plant names</a></li>
 					</ul>
 				</nav>
 			<div class="masthead">
 				<a href="/">
-					<div class="logo-lettering">
-						<?xml version="1.0" encoding="utf-8"?>
+											<div class="logo-lettering">
+							<?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 245.2 76.3" style="enable-background:new 0 0 245.2 76.3;" xml:space="preserve">
@@ -23,9 +48,9 @@
 	C228.5,51.3,231.2,44.8,231.1,38 M245.2,38c0,10.7-3.8,19.7-11.2,27c-7.5,7.4-16.7,11.1-27.6,11.1s-20.2-3.7-27.7-11.1
 	s-11.2-16.3-11.2-27c-0.2-10.2,4-19.9,11.3-27c7.5-7.3,16.7-11,27.6-11s20,3.6,27.6,10.9C241.4,18.3,245.2,27.3,245.2,38"/>
 </svg>
-					</div>
-					<h1 class="headline">About the World Flora Online project</h1>
-				</a>
+						</div>
+						<h1 class="headline">About the World Flora Online project</h1>
+									</a>
 				<div class="logo-roundel">
 					<div class="wrapper">
 						 <?xml version="1.0" encoding="utf-8"?>
@@ -259,7 +284,7 @@
 				</div>
 			</div>
 			
+<?php require_once('look/header_nav.php') ?>
+		</header>
 
-	
-
-<!-- end Nye's header -->
+		<main class="content"> 

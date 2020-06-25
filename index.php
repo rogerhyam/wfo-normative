@@ -43,9 +43,12 @@ if(isset($_GET['taxon_id'])){
 if(isset($_GET['taxon_search'])) $_SESSION["last_search"] = $_GET['taxon_search'];
 	
 ?>
-<?php require_once('look/header.php') ?>
-<main class="content" id="taxonomy_browser">
-	<div class="inner">
+
+<?php require_once('look/header_nye.php') ?>
+
+<!-- PlantList: content start -->
+
+<div id="taxonomy_browser">
 	
 	<form autocomplete="off" action="/index.php">
 	  <div class="autocomplete" style="width:100%;">
@@ -72,6 +75,8 @@ if($t){
 	echo '</div>';
 	
 	$kids = $t->get_children();
+	
+	echo '<span>Table of subtaxa, synonyms and unchecked names</span>';
 	echo '<table class="taxa_list">';
 	
 	echo '<tr><th>Name</th><th>Authorship</th><th>Published In</th><th class="status_cell">Status</th><th>WFO Link</th></tr>';
@@ -128,7 +133,6 @@ if($t){
 	
 	$terms = $_GET['taxon_search'];
 	
-	
 	// run the search
 	$sql = "SELECT taxonID, scientificName, search_text
  	   	FROM wfo_2019 WHERE MATCH(search_text)
@@ -164,8 +168,10 @@ if($t){
 	
 ?>
 
-</div><!-- end content -->
-</main>
+</div><!-- end #taxonomy_browser -->
 
-<?php require_once('look/footer.php') ?>
+<!-- PlantList: content start -->
+
+
+<?php require_once('look/footer_nye.php') ?>
 

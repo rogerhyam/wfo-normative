@@ -97,7 +97,7 @@ class Taxon{
 	}
 	
 	function get_name_publication_html(){
-		return "<span class=\"taxon_name_authorship\">" . $this->row['namePublishedIn'] . "</span>";
+		return "<span class=\"taxon_name_published_in\">" . $this->row['namePublishedIn'] . "</span>";
 	}
 	
 	function get_link_to_taxon(){

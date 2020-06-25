@@ -2,6 +2,12 @@
 	font-size: 85%;
 }
 
+
+#taxonomy_browser .taxon_name,
+#taxonomy_browser .taxon_name_authorship{
+  white-space: nowrap;
+}
+
 #taxonomy_browser .taxon_status_ACCEPTED{
   font-weight: 550;  
 }
@@ -14,9 +20,14 @@
 	width: 100%;
 }
 
+#taxonomy_browser table.taxa_list td{
+	vertical-align: top;
+	padding-right: 0.5em;
+}
+
 #taxonomy_browser  a{
 	color: #585858;
-    border-bottom: 0.5px #666666 solid;
+    /* border-bottom: 0.5px #666666 solid */;
 }
 
 #taxonomy_browser .taxon_italic{
@@ -24,7 +35,15 @@
 }
 
 #taxonomy_browser  .synonym_list_item_name::before{
+	  content: "~ ";
+}
+
+#taxonomy_browser  td .taxon_status_UNCHECKED::before{
 	  content: "- ";
+}
+
+#taxonomy_browser  td .taxon_status_ACCEPTED::before{
+	  content: "● ";
 }
 
 #taxonomy_browser th{
