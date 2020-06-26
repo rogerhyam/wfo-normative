@@ -160,7 +160,7 @@ if($t){
 	<table id="intro_table">
 		<tr>
 			<td>
-					<p>The <strong>WFO Plant List</strong> is a static working list of all known plant species produced by the global botanical community. It is derived from a snapshot of the WFO Taxonomic Backbone taken on 17 May 2019. Previous versions can be viewed using the menu bar above. The <strong>WFO Plant List</strong> provides the accepted Latin name for a plant along with all synonyms and publication information. About 20% of names need taxonomic scrutiny and are marked as unchecked. Classification and other details can be seen in the main WFO Portal by following links.</p>
+					<p>The <strong>WFO Plant List 2020</strong> is a static working list of all known plant species produced by the global botanical community. It is derived from a snapshot of the WFO Taxonomic Backbone taken on 17 May 2019. Previous versions can be viewed using the menu bar above. The <strong>WFO Plant List 2020</strong> provides the accepted Latin name for a plant along with all synonyms and publication information. About 20% of names need taxonomic scrutiny and are marked as unchecked. Classification and other details can be seen in the main WFO Portal by following links.</p>
 			</td>
 			<td id="phylum_list">
 				<ul>
