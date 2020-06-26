@@ -154,14 +154,33 @@ if($t){
 	// nothing past so don't do search or render taxon - home page
 	
 	$result = $mysqli->query("SELECT * FROM wfo_2019 where taxonRank = 'phylum'");
-	echo "<ul>";
+	
+	?>
+	
+	<table id="intro_table">
+		<tr>
+			<td>
+					<p>The <strong>WFO Plant List</strong> is a static working list of all known plant species produced by the global botanical community. It is derived from a snapshot of the WFO Taxonomic Backbone taken on 17 May 2019. Previous versions can be viewed using the menu bar above. The <strong>WFO Plant List</strong> provides the accepted Latin name for a plant along with all synonyms and publication information. About 20% of names need taxonomic scrutiny and are marked as unchecked. Classification and other details can be seen in the main WFO Portal by following links.</p>
+			</td>
+			<td id="phylum_list">
+				<ul>
+					
+	<?php
+	
 	while($row = $result->fetch_assoc()){
 		echo "<li>";
 		$t = Taxon::factory($row);
 		echo $t->get_link_to_taxon();
 		echo "</li>";
 	}
-	echo "</ul>";
+	
+	?>
+				</ul>
+			</td>
+		</tr>
+	</table>	
+	<?php
+	
 	
 }
 

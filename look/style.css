@@ -2,6 +2,27 @@
 	font-size: 85%;
 }
 
+#taxonomy_browser #intro_table{
+	width: 80%;
+}
+
+
+#taxonomy_browser #intro_table td{
+	padding-right: 2em;
+	vertical-align: top;
+}
+
+#taxonomy_browser #phylum_list{
+	border-left: solid 1px gray;
+	padding-left: 1em;
+}
+
+#taxonomy_browser #phylum_list ul{
+	list-style-image: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
 
 #taxonomy_browser .taxon_name,
 #taxonomy_browser .taxon_name_authorship{
