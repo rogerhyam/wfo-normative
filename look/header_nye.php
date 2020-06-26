@@ -27,7 +27,7 @@
 		<header class="main">
 				<nav class="inter-site-nav">
 					<ul class="nav-items">
-						<li class="wfo-portal "><a  href="http://www.worldfloraonline.org/">Explore the data</a></li>
+						<li class="wfo-portal "><a  href="http://wfo.nyehughes.webfactional.com/portal">Explore the data</a></li>
 						<li class="wfo-about " ><a  href="http://wfo.nyehughes.webfactional.com/">Find out about</a></li>
 						<li class="wfo-plant-list active"><a  href="/">Check a plant name</a></li>
 					</ul>
