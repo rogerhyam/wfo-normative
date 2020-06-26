@@ -48,7 +48,7 @@ if(isset($_GET['taxon_search'])) $_SESSION["last_search"] = $_GET['taxon_search'
 
 <!-- PlantList: content start -->
 
-<div id="taxonomy_browser">
+<section class="main" id="taxonomy_browser">
 	
 	<form autocomplete="off" action="/index.php">
 	  <div class="autocomplete" style="width:100%;">
@@ -187,7 +187,7 @@ if($t){
 	
 ?>
 
-</div><!-- end #taxonomy_browser -->
+</section><!-- end #taxonomy_browser -->
 
 <!-- PlantList: content start -->
 
